@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<adherents>
+        
+    <adherent id="1">
+                
+        <nom>Dupont</nom>
+                
+        <prenom>Jean</prenom>
+                
+        <categorie_id>1</categorie_id>
+                
+        <genre>Homme</genre>
+                
+        <naissance>2005-02-15</naissance>
+                
+        <nationalite>Française</nationalite>
+                
+        <adresse>10 rue de Paris</adresse>
+                
+        <code_postal>75001</code_postal>
+                
+        <ville>Paris</ville>
+                
+        <telephone1>0123456789</telephone1>
+                
+        <courriel>jean.dupont@example.com</courriel>
+                
+        <responsable_legal>Marie Dupont</responsable_legal>
+                
+        <armes_pratique>Fleuret</armes_pratique>
+                
+        <lateralite>Droitier</lateralite>
+            
+    </adherent>
+        
+    <adherent id="2">
+                
+        <nom>Martin</nom>
+                
+        <prenom>Dupont</prenom>
+                
+        <categorie_id>2</categorie_id>
+                
+        <genre>Femme</genre>
+                
+        <naissance>2010-04-10</naissance>
+                
+        <nationalite>Française</nationalite>
+                
+        <adresse>5 rue de l'Église</adresse>
+                
+        <code_postal>33000</code_postal>
+                
+        <ville>Bordeaux</ville>
+                
+        <telephone1>0987654321</telephone1>
+                
+        <courriel>claire.martin@example.com</courriel>
+                
+        <responsable_legal>Pierre Martin</responsable_legal>
+                
+        <armes_pratique>Épée</armes_pratique>
+                
+        <lateralite>Gaucher</lateralite>
+            
+    </adherent>
+        
+    <adherent id="3">
+                
+        <nom>Leblanc</nom>
+                
+        <prenom>Paul</prenom>
+                
+        <categorie_id>3</categorie_id>
+                
+        <genre>Homme</genre>
+                
+        <naissance>2008-11-22</naissance>
+                
+        <nationalite>Française</nationalite>
+                
+        <adresse>7 avenue de la République</adresse>
+                
+        <code_postal>31000</code_postal>
+                
+        <ville>Toulouse</ville>
+                
+        <telephone1>0345678901</telephone1>
+                
+        <courriel>paul.leblanc@example.com</courriel>
+                
+        <responsable_legal>Lucie Leblanc</responsable_legal>
+                
+        <armes_pratique>Sabre</armes_pratique>
+                
+        <lateralite>Droitier</lateralite>
+            
+    </adherent>
+    
+</adherents>
