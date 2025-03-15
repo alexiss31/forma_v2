@@ -12,7 +12,7 @@ import java.util.*;
 public class AdherentService {
 
 
-    private static final String XML_FILE_PATH = "C:/Users/HEUGASA/IdeaProjects/forma_v2/src/main/ressources/adherent.xml"; // Chemin vers le fichier XML
+    private static final String XML_FILE_PATH = "D:/Cours/2e_annee/AP/forma_v2/src/main/ressources/adherent.xml"; // Chemin vers le fichier XML
 
     // Méthode pour lister tous les adhérents depuis le fichier XML
     public List<Adherent> listerAdherents() {
@@ -50,11 +50,10 @@ public class AdherentService {
                     String responsableLegal = element.getElementsByTagName("responsable_legal").item(0).getTextContent();
                     String armesPratique = element.getElementsByTagName("armes_pratique").item(0).getTextContent();
                     String lateralite = element.getElementsByTagName("lateralite").item(0).getTextContent();
-                    String categorie = element.getElementsByTagName("categorie").item(0).getTextContent();
 
                     // Créer un nouvel objet Adherent et l'ajouter à la liste
                     Adherent adherent = new Adherent(nom, prenom, genre, naissance, nationalite, adresse, codePostal, ville,
-                            telephone1, courriel, responsableLegal, armesPratique, lateralite, categorie);
+                            telephone1, courriel, responsableLegal, armesPratique, lateralite);
                     adherents.add(adherent);
                 }
             }
@@ -143,22 +142,46 @@ public class AdherentService {
 
     public void ajouterAdherent(Adherent adherent) {
         try {
-            File file = new File("src/main/resources/adherent.xml");
+            File file = new File("src/main/ressources/adherent.xml");
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document doc = builder.parse(file);
-            doc.getDocumentElement().normalize();
+            Document doc;
+
+            // Vérifier si le fichier existe
+            if (file.exists()) {
+                doc = builder.parse(file);
+                doc.getDocumentElement().normalize();
+            } else {
+                // Créer un nouveau fichier XML si inexistant
+                doc = builder.newDocument();
+                Element rootElement = doc.createElement("Adherents");
+                doc.appendChild(rootElement);
+            }
 
             Element root = doc.getDocumentElement();
             Element adherentElement = doc.createElement("adherent");
 
-            // Ajouter les balises XML
+            // Ajouter les balises XML avec les données
             adherentElement.appendChild(createElement(doc, "nom", adherent.getNom()));
             adherentElement.appendChild(createElement(doc, "prenom", adherent.getPrenom()));
-            adherentElement.appendChild(createElement(doc, "categorie", adherent.getArmesPratique()));
+            adherentElement.appendChild(createElement(doc, "genre", adherent.getGenre()));
+            adherentElement.appendChild(createElement(doc, "naissance", adherent.getNaissance()));
+            adherentElement.appendChild(createElement(doc, "nationalite", adherent.getNationalite()));
+            adherentElement.appendChild(createElement(doc, "adresse", adherent.getAdresse()));
+            adherentElement.appendChild(createElement(doc, "code_postal", adherent.getCodePostal()));
+            adherentElement.appendChild(createElement(doc, "ville", adherent.getVille()));
+            adherentElement.appendChild(createElement(doc, "telephone1", adherent.getTelephone1()));
+            adherentElement.appendChild(createElement(doc, "courriel", adherent.getCourriel()));
+            adherentElement.appendChild(createElement(doc, "responsable_legal", adherent.getResponsableLegal()));
+            adherentElement.appendChild(createElement(doc, "armes_pratique", adherent.getArmesPratique()));
+            adherentElement.appendChild(createElement(doc, "lateralite", adherent.getLateralite()));
 
             root.appendChild(adherentElement);
+
+            // Sauvegarder les modifications
             saveXMLChanges(doc);
+
+            System.out.println("Adhérent ajouté avec succès !");
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -18,7 +18,7 @@ public class Adherent {
     // Constructeur
     public Adherent(String nom, String prenom, String genre, String naissance, String nationalite, String adresse,
                     String codePostal, String ville, String telephone1, String courriel, String responsableLegal,
-                    String armesPratique, String lateralite, String categorie) {
+                    String armesPratique, String lateralite) {
         this.nom = nom;
         this.prenom = prenom;
         this.genre = genre;

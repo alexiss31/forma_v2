@@ -94,7 +94,7 @@ public class DeleteAdherentFrame extends JFrame {
 
             @Override
             public void mouseExited(MouseEvent e) {
-                backButton.setForeground(Color.WHITE);
+                backButton.setForeground(Color.BLACK);
             }
         });
 
@@ -188,6 +188,7 @@ public class DeleteAdherentFrame extends JFrame {
             // Afficher les informations
             JPanel infoPanel = new JPanel(new GridLayout(0, 1, 5, 10));
             infoPanel.setBackground(Color.WHITE);
+            infoPanel.setForeground(Color.BLACK);
 
             infoPanel.add(createInfoLabel("Adhérent trouvé :"));
             infoPanel.add(createInfoField("Nom : " + adherent.getNom()));
@@ -202,7 +203,7 @@ public class DeleteAdherentFrame extends JFrame {
 
             JButton deleteButton = new JButton("Supprimer");
             deleteButton.setFont(BUTTON_FONT);
-            deleteButton.setForeground(Color.WHITE);
+            deleteButton.setForeground(Color.BLACK);
             deleteButton.setBackground(WARNING_COLOR);
             deleteButton.setFocusPainted(false);
             deleteButton.setBorder(BorderFactory.createEmptyBorder(8, 15, 8, 15));
@@ -265,13 +266,16 @@ public class DeleteAdherentFrame extends JFrame {
 
     private JLabel createInfoLabel(String text) {
         JLabel label = new JLabel(text);
-        label.setFont(new Font("Arial", Font.BOLD, 14));
+        label.setFont(new Font("Arial", Font.BOLD, 16));
+        label.setForeground(Color.BLACK); // Couleur du texte en noir
         return label;
     }
 
+
     private JLabel createInfoField(String text) {
         JLabel label = new JLabel(text);
-        label.setFont(LABEL_FONT);
+        label.setFont(new Font("Arial", Font.PLAIN, 14));
+        label.setForeground(Color.BLACK); // Assurez-vous que la couleur du texte est noire
         return label;
     }
 
