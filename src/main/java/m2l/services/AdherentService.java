@@ -12,7 +12,8 @@ import java.util.*;
 public class AdherentService {
 
 
-    private static final String XML_FILE_PATH = "D:/Cours/2e_annee/AP/forma_v2/src/main/ressources/adherent.xml"; // Chemin vers le fichier XML
+    private static final String XML_FILE_PATH = "src/main/ressources/adherent.xml";
+
 
     // Méthode pour lister tous les adhérents depuis le fichier XML
     public List<Adherent> listerAdherents() {
