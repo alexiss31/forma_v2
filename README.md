@@ -1,0 +1,3 @@
+- Récupérer les dossiers contenus dans le dossier code
+- Ouvrir le dossier Code soit dans IntelliJ soit dans Eclipse
+- Run le projet via le fichier src/main/java/m2l.gui/MainMenuFrame.java
